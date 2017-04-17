@@ -1,0 +1,43 @@
+Scapy script:
+
+>>> packet = IP(dst="8.8.8.8")/ICMP()
+>>> ans = sr1(packet)
+Begin emission:
+.Finished to send 1 packets.
+*
+Received 2 packets, got 1 answers, remaining 0 packets
+>>> ans.show()
+###[ IP ]###
+  version= 4L
+  ihl= 5L
+  tos= 0x0
+  len= 28
+  id= 0
+  flags= 
+  frag= 0L
+  ttl= 53
+  proto= icmp
+  chksum= 0x6b44
+  src= 8.8.8.8
+  dst= 10.140.0.2
+  \options\
+###[ ICMP ]###
+     type= echo-reply
+     code= 0
+     chksum= 0xffff
+     id= 0x0
+     seq= 0x0
+
+tcpdump output:
+tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
+23:33:38.151092 IP (tos 0x0, ttl 64, id 1, offset 0, flags [none], proto ICMP (1), length 28)
+    10.211.55.7 > google-public-dns-a.google.com: ICMP echo request, id 0, seq 0, length 8
+	0x0000:  001c 4200 0018 001c 4226 0cbf 0800 4500  ..B.....B&....E.
+	0x0010:  001c 0001 0000 4001 28f7 0ad3 3707 0808  ......@.(...7...
+	0x0020:  0808 0800 f7ff 0000 0000                 ..........
+23:33:38.164615 IP (tos 0x0, ttl 128, id 40279, offset 0, flags [none], proto ICMP (1), length 28)
+    google-public-dns-a.google.com > 10.211.55.7: ICMP echo reply, id 0, seq 0, length 8
+	0x0000:  001c 4226 0cbf 001c 4200 0018 0800 4500  ..B&....B.....E.
+	0x0010:  001c 9d57 0000 8001 4ba0 0808 0808 0ad3  ...W....K.......
+	0x0020:  3707 0000 ffff 0000 0000                 7.........
+

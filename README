@@ -1,0 +1,11 @@
+Problem1:
+
+run:
+
+./ngram.py [an integer n that is the length of the ngrams] [an integer s that is the length of the slide] [the name of the file to analyze] [the name of the output file]
+
+Output:
+
+The output will be a file with the n-grams in hex and the number of occurrence in the file.
+
+In my testing, the longest time to run the program is 0.08s.

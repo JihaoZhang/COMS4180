@@ -1,0 +1,53 @@
+➜  ~ sudo tcpdump -i eth0 -vv -XX
+tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
+22:03:26.316427 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 10.211.55.1 tell 10.211.55.7, length 28
+	0x0000:  ffff ffff ffff 001c 4226 0cbf 0806 0001  ........B&......
+	0x0010:  0800 0604 0001 001c 4226 0cbf 0ad3 3707  ........B&....7.
+	0x0020:  0000 0000 0000 0ad3 3701                 ........7.
+22:03:26.320967 ARP, Ethernet (len 6), IPv4 (len 4), Reply 10.211.55.1 is-at 00:1c:42:00:00:18 (oui Unknown), length 28
+	0x0000:  001c 4226 0cbf 001c 4200 0018 0806 0001  ..B&....B.......
+	0x0010:  0800 0604 0002 001c 4200 0018 0ad3 3701  ........B.....7.
+	0x0020:  001c 4226 0cbf 0ad3 3707                 ..B&....7.
+22:03:26.335531 IP (tos 0x0, ttl 64, id 1, offset 0, flags [none], proto TCP (6), length 640)
+    dyn-160-39-141-17.dyn.columbia.edu.http > projects.sourceforge.net.http: Flags [S], cksum 0x361e (correct), seq 0:600, win 8192, length 600
+	0x0000:  001c 4200 0018 001c 4226 0cbf 0800 4500  ..B.....B&....E.
+	0x0010:  0280 0001 0000 4006 bdbb a027 8d11 d822  ......@....'..."
+	0x0020:  b560 0050 0050 0000 0000 0000 0000 5002  .`.P.P........P.
+	0x0030:  2000 361e 0000 4745 5420 2f20 4854 5450  ..6...GET./.HTTP
+	0x0040:  2f31 2e31 5c72 5c6e 486f 7374 3a20 7373  /1.1\r\nHost:.ss
+	0x0050:  6465 6570 2e73 6f75 7263 6566 6f72 6765  deep.sourceforge
+	0x0060:  2e6e 6574 5c72 5c6e 436f 6e6e 6563 7469  .net\r\nConnecti
+	0x0070:  6f6e 3a20 6b65 6570 2d61 6c69 7665 5c72  on:.keep-alive\r
+	0x0080:  5c6e 4361 6368 652d 436f 6e74 726f 6c3a  \nCache-Control:
+	0x0090:  206d 6178 2d61 6765 3d30 5c72 5c6e 5570  .max-age=0\r\nUp
+	0x00a0:  6772 6164 652d 496e 7365 6375 7265 2d52  grade-Insecure-R
+	0x00b0:  6571 7565 7374 733a 2031 5c72 5c6e 5573  equests:.1\r\nUs
+	0x00c0:  6572 2d41 6765 6e74 3a20 4d6f 7a69 6c6c  er-Agent:.Mozill
+	0x00d0:  612f 352e 3020 284d 6163 696e 746f 7368  a/5.0.(Macintosh
+	0x00e0:  3b20 496e 7465 6c20 4d61 6320 4f53 2058  ;.Intel.Mac.OS.X
+	0x00f0:  2031 305f 3132 5f33 2920 4170 706c 6557  .10_12_3).AppleW
+	0x0100:  6562 4b69 742f 3533 372e 3336 2028 4b48  ebKit/537.36.(KH
+	0x0110:  544d 4c2c 206c 696b 6520 4765 636b 6f29  TML,.like.Gecko)
+	0x0120:  2043 6872 6f6d 652f 3537 2e30 2e32 3938  .Chrome/57.0.298
+	0x0130:  372e 3133 3320 5361 6661 7269 2f35 3337  7.133.Safari/537
+	0x0140:  2e33 365c 725c 6e41 6363 6570 743a 2074  .36\r\nAccept:.t
+	0x0150:  6578 742f 6874 6d6c 2c61 7070 6c69 6361  ext/html,applica
+	0x0160:  7469 6f6e 2f78 6874 6d6c 2b78 6d6c 2c61  tion/xhtml+xml,a
+	0x0170:  7070 6c69 6361 7469 6f6e 2f78 6d6c 3b71  pplication/xml;q
+	0x0180:  3d30 2e39 2c69 6d61 6765 2f77 6562 702c  =0.9,image/webp,
+	0x0190:  2a2f 2a3b 713d 302e 385c 725c 6e52 6566  */*;q=0.8\r\nRef
+	0x01a0:  6572 6572 3a20 6874 7470 733a 2f2f 7777  erer:.https://ww
+	0x01b0:  772e 676f 6f67 6c65 2e63 6f6d 2f5c 725c  w.google.com/\r\
+	0x01c0:  6e41 6363 6570 742d 456e 636f 6469 6e67  nAccept-Encoding
+	0x01d0:  3a20 677a 6970 2c20 6465 666c 6174 652c  :.gzip,.deflate,
+	0x01e0:  2073 6463 685c 725c 6e41 6363 6570 742d  .sdch\r\nAccept-
+	0x01f0:  4c61 6e67 7561 6765 3a20 656e 2d55 532c  Language:.en-US,
+	0x0200:  656e 3b71 3d30 2e38 2c7a 682d 434e 3b71  en;q=0.8,zh-CN;q
+	0x0210:  3d30 2e36 2c7a 683b 713d 302e 342c 7a68  =0.6,zh;q=0.4,zh
+	0x0220:  2d54 573b 713d 302e 325c 725c 6e49 662d  -TW;q=0.2\r\nIf-
+	0x0230:  4e6f 6e65 2d4d 6174 6368 3a20 572f 2234  None-Match:.W/"4
+	0x0240:  3765 302d 3531 3437 6664 6466 3836 3934  7e0-5147fddf8694
+	0x0250:  3022 5c72 5c6e 4966 2d4d 6f64 6966 6965  0"\r\nIf-Modifie
+	0x0260:  642d 5369 6e63 653a 2046 7269 2c20 3234  d-Since:.Fri,.24
+	0x0270:  2041 7072 2032 3031 3520 3232 3a32 353a  .Apr.2015.22:25:
+	0x0280:  3031 2047 4d54 5c72 5c6e 5c72 5c6e       01.GMT\r\n\r\n
